@@ -1,0 +1,5 @@
+
+	cpp:S6012"gAvoid explicitly specifying the template arguments by relying on the class template argument deduction.(ÄàÜñøÿÿÿÿ
+	cpp:S6012"gAvoid explicitly specifying the template arguments by relying on the class template argument deduction.(ìÏ©«ÿÿÿÿÿ
+W	cpp:S5997"=Replace this use of "std::lock_guard" with "std::scoped_lock"(ìÏ©«ÿÿÿÿÿ
+i	cpp:S6045""TUse the transparent comparator "std::less<>" with this associative string container.(ˆò¥Õ

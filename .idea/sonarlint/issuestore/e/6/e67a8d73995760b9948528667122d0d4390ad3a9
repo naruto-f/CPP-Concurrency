@@ -1,0 +1,11 @@
+
+,cpp:S905Z"expression result unused(òæƒ–
+;	cpp:S5421"!Global variables should be const.(Óù¥ şÿÿÿÿ
+6	cpp:S5421"!Global variables should be const.(¢ş†İ
+	cpp:S6012"gAvoid explicitly specifying the template arguments by relying on the class template argument deduction.(ø¸ºÔûÿÿÿÿ
+;	cpp:S5421@"!Global variables should be const.(ãÈŸÛşÿÿÿÿ
+5	cpp:S5421A"!Global variables should be const.(ğÃ‚>
+6	cpp:S5421B"!Global variables should be const.(˜Ï¤Ğ
+	cpp:S6012J"gAvoid explicitly specifying the template arguments by relying on the class template argument deduction.(¦çòÔùÿÿÿÿ
+W	cpp:S5997J"=Replace this use of "std::lock_guard" with "std::scoped_lock"(¦çòÔùÿÿÿÿ
+|	cpp:S6012V"gAvoid explicitly specifying the template arguments by relying on the class template argument deduction.(äóğñ
