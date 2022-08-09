@@ -5,6 +5,7 @@
 
 #include <list>
 #include <algorithm>
+#include <future>
 
 
 
@@ -44,6 +45,39 @@ std::list<T> sequential_quick_sort(std::list<T> input)
 }
 
 
+
+/***                           快速排序并行版                          ***/
+
+template<typename T>
+std::list<T> parallel_quick_sort(std::list<T> input)
+{
+    if(input.empty())
+    {
+        return std::list<T>();
+    }
+
+    std::list<T> result;
+    result.splice(result.begin(), input, input.begin());
+    const T& pivot = *result.begin();
+
+    auto divideIter = std::partition(input.begin(), input.end(), [&](const T& value) { return value < pivot; });
+
+    std::list<T> lower_part;
+    lower_part.splice(lower_part.end(), input, input.begin(), divideIter);
+
+    /* 调用std::async()使用另外的线程对lower_part部分排序，大于的部分继续使用递归排序 */
+    std::future<std::list<T>> newLower(std::async(&parallel_quick_sort<T>, std::move(lower_part)));
+    auto newHigher(parallel_quick_sort(std::move(input)));
+
+    result.splice(result.end(), newHigher);
+
+    /* ①在调用splice前，先调用newLower的get函数检索计算结果，有可能需要等待任务完成
+     * ②futrue的get函数返回一个包含结果的右值引用，所以可以移动
+     */
+    result.splice(result.begin(), newLower.get());
+
+    return result;
+}
 
 
 
